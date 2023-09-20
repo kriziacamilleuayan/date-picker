@@ -1,6 +1,6 @@
 .active {
-  border: red;
   color: red;
+  background-color: red;
 }
 
 .headerDays{

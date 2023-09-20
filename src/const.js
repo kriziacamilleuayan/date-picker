@@ -11,7 +11,7 @@ export const week = {
 };
 
 export const months = [...Array(12).keys()].map((key) =>
-  new Date(0, key).toLocaleString("en", { month: "long" })
+  new Date(0, key).toLocaleString("en", { month: "short" })
 );
 
 export const views = ["days", "months", "year"];

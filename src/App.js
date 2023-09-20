@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import {
   daysInMonth,
   getPrevNextDates,
@@ -24,6 +23,12 @@ function App() {
   const handleChangeMonth = (mo) => {
     setSelectedMonth(mo);
     setDays(daysInMonth(mo, selectedYear));
+    setPickerView(views[0]);
+  };
+
+  const handleChangeYear = (yr) => {
+    setSelectedYear(yr);
+    setPickerView(views[1]);
   };
 
   const handleSelectDate = (date) => {
@@ -68,7 +73,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={{ fontFamily: "Arial" }}>
       <DatePickerContainer>
         <HeaderComponent
           selectedMonth={selectedMonth}
@@ -98,11 +103,12 @@ function App() {
         {pickerView === views[2] && (
           <YearComponent
             selectedYear={selectedYear}
-            setSelectedYear={setSelectedYear}
+            handleChangeYear={handleChangeYear}
             years={years}
           />
         )}
       </DatePickerContainer>
+      <p>{selectedDate}</p>
     </div>
   );
 }

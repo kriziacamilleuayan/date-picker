@@ -51,7 +51,14 @@ const DaysName = styled.div`
 `;
 
 const DaysButton = styled.button`
-  background: ${(props) => (props.$active ? "red" : "transparent")};
+  background: ${(props) =>
+    props.disabled && props.$active
+      ? "lightgray"
+      : props.$active
+      ? "red"
+      : "transparent"};
+  color: ${(props) =>
+    props.$active ? "white" : props.disabled ? "lightgray" : "initial"};
   border-radius: 50%;
   width: 30px;
   height: 30px;

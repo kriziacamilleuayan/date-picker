@@ -72,6 +72,19 @@ function App() {
     }
   };
 
+  const handleDateChange = (e) => {
+    const re = /^[\d -]+$/; // only accepts 0-9 and  -
+    if (e.target.value === "" || re.test(e.target.value)) {
+      const latestChange = e.target.value.split("-");
+      const last = latestChange.at(-1);
+      console.log("wow", latestChange.length, last);
+      setSelectedDate(e.target.value);
+    }
+    // var reg =
+    //   /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|(([1][26]|[2468][048]|[3579][26])00))))$/g;
+    console.log(e.target.value.split("-"));
+  };
+
   return (
     <div style={{ fontFamily: "Arial" }}>
       <DatePickerContainer>
@@ -108,6 +121,13 @@ function App() {
           />
         )}
       </DatePickerContainer>
+
+      <input
+        type="text"
+        placeholder="YYYY-MM-DD"
+        onChange={handleDateChange}
+        defaultValue={selectedDate}
+      />
       <p>{selectedDate}</p>
     </div>
   );

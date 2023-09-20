@@ -1,0 +1,12 @@
+.active {
+  border: red;
+  color: red;
+}
+
+.headerDays{
+  display: flex;
+}
+
+.headerDay {
+  padding: 10px;
+}

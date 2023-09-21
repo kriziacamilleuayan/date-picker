@@ -85,6 +85,15 @@ function App() {
     console.log(e.target.value.split("-"));
   };
 
+  // const handleKeyDown = (e) => {
+  //   const re = /^[\d -]+$/; // only accepts 0-9 and  -
+  //   console.log("e", e);
+  //   if (e.target.value === "" || re.test(e.target.value)) {
+  //     const latestChange = e.target.value.split("-");
+  //     setSelectedDate(e.target.value);
+  //   }
+  // };
+
   return (
     <div style={{ fontFamily: "Arial" }}>
       <DatePickerContainer>
@@ -126,7 +135,8 @@ function App() {
         type="text"
         placeholder="YYYY-MM-DD"
         onChange={handleDateChange}
-        defaultValue={selectedDate}
+        // onKeyDown={handleKeyDown}
+        value={selectedDate}
       />
       <p>{selectedDate}</p>
     </div>

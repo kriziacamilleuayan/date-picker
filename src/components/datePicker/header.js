@@ -1,4 +1,4 @@
-import { months, views } from "../const";
+import { months, views } from "../../const";
 
 const HeaderComponent = ({
   selectedMonth,

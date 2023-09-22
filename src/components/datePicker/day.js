@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { getCalendarDays } from "../helpers";
-import { week } from "../const";
+import { getCalendarDays } from "../../helpers";
+import { week } from "../../const";
 
 const DaysComponent = ({
   days,

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { months } from "../const";
+import { months } from "../../const";
 
 const MonthComponent = ({ handleChangeMonth, selectedMonth }) => {
   return (
